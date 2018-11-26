@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Nov  5 11:20:35 2018
+Created on Mon Nov 26 01:21:41 2018
 
 @author: himansh
 """
@@ -37,10 +37,20 @@ def convert_pdf_to_txt(path):
     fp.close()
     device.close()
     retstr.close()
+    
     return text
 
-
-
-Path="AICST\\AICST\\MF\\MAWB\\117438-4312_327220171005155635-Page(1).pdf"
-x=convert_pdf_to_txt(Path)
-print(x)
+#print (convert_pdf_to_txt('235699-AWBLayout_305620180102155940-Page(3)'))
+import os
+for i in os.listdir("G:\\shipmnts\\AICST\\AICST\\MF\\HAWB\\")[:9]:
+    try:
+        text=convert_pdf_to_txt(r'G:\\shipmnts\\AICST\\AICST\\MF\\HAWB\\'+i)
+#print (convert_pdf_to_txt(r'G:\\shipmnts\\AICST\\AICST\\MF\\HAWB\\235699-AWBLayout_305620180102155940-Page(3).pdf'))
+    
+        filename=i[:-3]+"txt"
+        text_file = open("HAWB2\\"+filename, "w")
+        text_file.write("%s \n" % text)
+        
+        text_file.close()
+    except: continue
+    print(text)
