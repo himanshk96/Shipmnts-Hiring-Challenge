@@ -1,0 +1,10 @@
+1.  virtualenv hk
+2. hk\Scripts\activate
+3. (hk) C:\Python27\Scripts> set GOOGLE_APPLICATION_CREDENTIALS=C:\Python27\Scripts\
+hk\shipmnts78685b5823b1.json
+
+This json is the credential file we get from out service auth from GCP
+
+4. hk\Scripts\python.exe fullpath\to\file.py
+
+Hurrah!
